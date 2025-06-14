@@ -1,11 +1,27 @@
 package io.github.springweb.apispring.model;
 
-// POJO -> Plain Old Java Object
-public class Produto {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+// POJO -> Plain Old Java Object
+
+@Entity
+// Nenhuma dessas annotation são obrigatórias quando o nome da coluna ou tabela é igual no Model.
+@Table(name = "produto")
+public class Produto {
+    // É possível usar essa técnica pra casos onde a coluna tem
+    // um nome diferente do Model.
+    //@Column(name = "Outro nome para a coluna")
+    @Id
+    @Column
     private String id;
+    @Column
     private String nome;
+    @Column
     private String descricao;
+    @Column
     private Double preco;
 
     public String getId() {
