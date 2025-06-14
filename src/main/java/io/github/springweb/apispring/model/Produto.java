@@ -11,11 +11,8 @@ import jakarta.persistence.Table;
 // Nenhuma dessas annotation são obrigatórias quando o nome da coluna ou tabela é igual no Model.
 @Table(name = "produto")
 public class Produto {
-    /* OBS:
-     * É possível usar essa técnica pra casos onde a coluna tem
-     * um nome diferente do Model.
-     */
-    //@Column(name = "Outro nome para a coluna")
+    // É possível usar essa técnica pra casos onde a coluna tem um nome diferente do Model.
+    // @Column(name = "Outro nome para a coluna")
     @Id
     @Column
     private String id;
@@ -26,6 +23,8 @@ public class Produto {
     @Column
     private Double preco;
 
+
+    // Getters & Setters
     public String getId() {
         return id;
     }
@@ -58,6 +57,7 @@ public class Produto {
         this.preco = preco;
     }
 
+    // Apenas para exibir o objeto recebido no console.
     @Override
     public String toString() {
         return "Produto{" +

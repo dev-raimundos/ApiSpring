@@ -6,16 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+@RestController // Annotation para tornar a classe gerenciável pelo Spring Boot.
 public class SpringApiApplication {
 
+    // Definindo uma rota simples
     @GetMapping("/hello-world")
-    public String helloWorld(){
+    public String helloWorld() {
         return "Hello World!";
     }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        // Bootstrap da aplicação Spring dentro do method Main
+        SpringApplication.run(SpringApiApplication.class, args);
+    }
 
 }
