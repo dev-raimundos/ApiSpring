@@ -1,12 +1,15 @@
 spring:
   application:
     name: Produtos API
+    # Autenticação do banco
   datasource:
     url: jdbc:h2:mem:produtos
     username: sa
     password: 1903
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    # Ativando o console do banco e em path definimos a url para acessar o console
+    # h2-console é a URL padrão
   h2:
     console:
       enabled: true

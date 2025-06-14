@@ -11,8 +11,10 @@ import jakarta.persistence.Table;
 // Nenhuma dessas annotation são obrigatórias quando o nome da coluna ou tabela é igual no Model.
 @Table(name = "produto")
 public class Produto {
-    // É possível usar essa técnica pra casos onde a coluna tem
-    // um nome diferente do Model.
+    /* OBS:
+     * É possível usar essa técnica pra casos onde a coluna tem
+     * um nome diferente do Model.
+     */
     //@Column(name = "Outro nome para a coluna")
     @Id
     @Column
