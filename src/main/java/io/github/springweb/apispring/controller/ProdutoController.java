@@ -4,6 +4,7 @@ import io.github.springweb.apispring.model.Produto;
 import io.github.springweb.apispring.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -37,7 +38,7 @@ public class ProdutoController {
         Optional<Produto> produto = produtoRepository.findById(id);
         // return produto.isPresent() ? produto.get() : null;
         // Abordagem alternativa usando o Optional de forma avançada
-         return produtoRepository.findById(id).orElse(null);
+        return produtoRepository.findById(id).orElse(null);
     }
 
     @DeleteMapping("{id}")
@@ -49,5 +50,10 @@ public class ProdutoController {
     public void atualizar(@PathVariable("id") String id, @RequestBody Produto produto) {
         produto.setId(id);
         produtoRepository.save(produto);
+    }
+
+    @GetMapping
+    public List<Produto> buscar(@RequestParam("nome") String nome) {
+        return produtoRepository.findByNome(nome);
     }
 }
